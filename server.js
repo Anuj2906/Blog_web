@@ -15,9 +15,9 @@ app.use(methodOverride('_method'));
 
 app.get('/', async (req,res)=>{
     const articles = await Article.find().sort({createdAt: 'desc'});
-    res.render('articles/index', {text: articles})
+    res.render('articles/index', {text: articles});
 });
 
 
-app.use('/articles',articleRouter)
-app.listen(3000)
+app.use('/articles',articleRouter);
+app.listen(3000);
